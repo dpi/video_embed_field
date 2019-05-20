@@ -39,7 +39,7 @@ class BundleTest extends MediaFunctionalTestBase {
     $this->drupalLogin($this->adminUser);
 
     // Create bundle and modify form display.
-    $media_type = $this->createMediaType(['bundle' => 'video_bundle'], 'video_embed_field');
+    $media_type = $this->createMediaType('video_embed_field', ['bundle' => 'video_bundle']);
     $source = $media_type->getSource();
     $source_field = $source->getSourceFieldDefinition($media_type);
     if ($source_field->isDisplayConfigurable('form')) {
